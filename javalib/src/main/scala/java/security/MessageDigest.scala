@@ -3,6 +3,7 @@ package java.security
 abstract class MessageDigest(private var algorithm: String)
     extends MessageDigestSpi {
   def digest(): Array[Byte] = engineDigest()
+  def digest(input: Array[Byte]): Array[Byte] = engineDigest(input)
   def update(input: Array[Byte], offset: Int, len: Int): Unit =
     engineUpdate(input, offset, len)
   def update(input: Byte): Unit = engineUpdate(input)
