@@ -30,6 +30,7 @@ abstract class MessageDigestSpi {
   }
 
   protected def engineDigest(): Array[Byte]
+  protected def engineDigest(input: Array[Byte]): Array[Byte]
 
   protected def engineDigest(buf: Array[Byte], offset: Int, len: Int): Int =
     if (len < engineGetDigestLength()) {

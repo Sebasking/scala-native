@@ -22,6 +22,7 @@ object MessageDigest {
 private class DummyMessageDigest(algorithm: String)
     extends MessageDigest(algorithm) {
   override protected def engineDigest(): Array[Byte]     = Array.empty
+  override protected def engineDigest(input: Array[Byte]): Array[Byte]     = Array.empty
   override protected def engineReset(): Unit             = ()
   override protected def engineUpdate(input: Byte): Unit = ()
   override protected def engineUpdate(input: Array[Byte],
